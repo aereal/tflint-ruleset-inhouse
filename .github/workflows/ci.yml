@@ -29,5 +29,6 @@ jobs:
           key: go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             go-
+      - run: go mod download
       - name: test
         run: go test -v -race -cover ./...
